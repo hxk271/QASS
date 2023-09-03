@@ -13,10 +13,10 @@
 
 <br/>
 
-## 제1주차(강의 소개/통계학과 자료의 이해)
+## 제1주차(Course Introduction)
 
--  [**A섹션: 강의 소개**](https://github.com/hxk271/IntSocStats/blob/main/Beamer______W01A.pdf)
+-  [**A섹션: 강의 소개**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W01A.pdf)
 
--  [**B섹션: 통계학과 자료의 이해**](https://github.com/hxk271/IntSocStats/blob/main/Beamer______W01B.pdf)
+-  [**B섹션: Stata 입문**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W01B.pdf)
 
--  [퀴즈 #1](https://github.com/hxk271/IntSocStats/blob/main/HW_W01.docx)
+-  [코드 #1](https://github.com/hxk271/QASS/blob/main/W01.do)
