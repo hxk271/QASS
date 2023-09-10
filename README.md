@@ -20,3 +20,14 @@
 -  [**B섹션: Stata 입문**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W01B.pdf)
 
 -  [코드 #1](https://github.com/hxk271/QASS/blob/main/W01.do)
+
+
+<br/>
+
+## 제2주차(Descriptive Statistics and Hypothesis Tests)
+
+-  [**A섹션: Descriptive Statistics**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W01A.pdf)
+-  
+-  [**B섹션: Hypothesis Tests**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W01B.pdf)
+-  
+-  [코드 #2](https://github.com/hxk271/QASS/blob/main/W01.do)
