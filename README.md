@@ -38,8 +38,8 @@
 ## 제3주차(Examining Data)
 
 -  [**A섹션: Data Archives**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W03A.pdf)
--  
+
 -  [**B섹션: Examining Datasets**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W03B.pdf)
--  
+
 -  [코드](https://github.com/hxk271/QASS/blob/main/W03.do)
 
