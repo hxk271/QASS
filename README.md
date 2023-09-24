@@ -42,4 +42,17 @@
 -  [**B섹션: Examining Datasets**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W03B.pdf)
 
 -  [코드](https://github.com/hxk271/QASS/blob/main/W03.do)
+  
+
+<br/>
+
+## 제4주차(교차표와 카이제곱 독립성 검정)
+
+-  [**A섹션: Cross-tabulation**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W04A.pdf)
+
+-  [**B섹션: Chi-square Test of Independence**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W04B.pdf)
+
+-  [코드](https://github.com/hxk271/QASS/blob/main/W04.do)
+
+
 
