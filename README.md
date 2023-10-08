@@ -55,4 +55,16 @@
 -  [코드](https://github.com/hxk271/QASS/blob/main/W04.do)
 
 
+<br/>
+
+## 제4주차(교차표와 카이제곱 독립성 검정)
+
+-  [**A섹션: Comparing Means/Proportions**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05A.pdf)
+
+-  [**B섹션: Comparing Variances**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05B.pdf)
+
+-  [코드](https://github.com/hxk271/QASS/blob/main/W05.do)
+
+
+
 
