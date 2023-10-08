@@ -46,7 +46,7 @@
 
 <br/>
 
-## 제4주차(교차표와 카이제곱 독립성 검정)
+## 제4주차(Cross-Tabulations and Tables)
 
 -  [**A섹션: Cross-tabulation**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W04A.pdf)
 
@@ -57,7 +57,7 @@
 
 <br/>
 
-## 제4주차(교차표와 카이제곱 독립성 검정)
+## 제4주차(Means/Proportions Comparison and ANOVA)
 
 -  [**A섹션: Comparing Means/Proportions**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05A.pdf)
 
