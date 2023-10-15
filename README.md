@@ -73,6 +73,6 @@
 
 -  [**A섹션: 상관분석**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05A.pdf)
 -  [**B섹션: 이변량 보통최소자승**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05B.pdf)
--  [코드 #6](https://github.com/hxk271/LinearRegression/blob/main/W06.do)
+-  [코드 #6](https://github.com/hxk271/QASS/blob/main/W06.do)
 
 
