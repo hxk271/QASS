@@ -41,7 +41,7 @@
 
 -  [**B섹션: Examining Datasets**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W03B.pdf)
 
--  [코드](https://github.com/hxk271/QASS/blob/main/W03.do)
+-  [코드 #3](https://github.com/hxk271/QASS/blob/main/W03.do)
   
 
 <br/>
@@ -52,19 +52,27 @@
 
 -  [**B섹션: Chi-square Analysis**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W04B.pdf)
 
--  [코드](https://github.com/hxk271/QASS/blob/main/W04.do)
+-  [코드 #4](https://github.com/hxk271/QASS/blob/main/W04.do)
 
 
 <br/>
 
-## 제4주차(Means/Proportions Comparison and ANOVA)
+## 제5주차(Means/Proportions Comparison and ANOVA)
 
 -  [**A섹션: Comparing Means/Proportions**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05A.pdf)
 
 -  [**B섹션: Comparing Variances**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05B.pdf)
 
--  [코드](https://github.com/hxk271/QASS/blob/main/W05.do)
+-  [코드 #5](https://github.com/hxk271/QASS/blob/main/W05.do)
 
 
+
+<br/>
+
+## 제6주차(Correlations and OLS Regression)
+
+-  [**A섹션: 상관분석**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05A.pdf)
+-  [**B섹션: 이변량 보통최소자승**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05B.pdf)
+-  [코드 #6](https://github.com/hxk271/LinearRegression/blob/main/W06.do)
 
 
