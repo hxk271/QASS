@@ -85,6 +85,6 @@
   
 -  [**B섹션: Multiple Regression in Practice**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W07B.pdf)
   
--  [코드 #6](https://github.com/hxk271/QASS/blob/main/W07.do)
+-  [코드 #7](https://github.com/hxk271/QASS/blob/main/W07.do)
 
 
