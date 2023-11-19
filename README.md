@@ -113,3 +113,14 @@
 -  [**B섹션: Assumptions about Error Term**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W10B.pdf)
 
 -  [코드 #10](https://github.com/hxk271/QASS/blob/main/W10.do)
+
+
+<br/>
+
+## 제10주차(Non-linear Tests and Variable Transformations)
+
+-  [**A섹션: Quadratic Function and Fractional Polynomials**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W11A.pdf)
+
+-  [**B섹션: Variable Transformation**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W11B.pdf)
+
+-  [코드 #11](https://github.com/hxk271/QASS/blob/main/W11.do)
