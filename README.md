@@ -117,7 +117,7 @@
 
 <br/>
 
-## 제10주차(Non-linear Tests and Variable Transformations)
+## 제11주차(Nonlinear Modelling and Variable Transformations)
 
 -  [**A섹션: Quadratic Function and Fractional Polynomials**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W11A.pdf)
 
