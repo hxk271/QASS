@@ -135,3 +135,23 @@
 -  [**B섹션: Internal Reliability and Cronbach's Alpha**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W12B.pdf)
 
 -  [코드 #12](https://github.com/hxk271/QASS/blob/main/W12.do)
+
+
+<br/>
+
+## 제13주차(Path Analysis)
+
+-  [**A섹션: Path Analysis and Mediation Effect**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W13A.pdf)
+
+-  [코드 #13](https://github.com/hxk271/QASS/blob/main/W13.do)
+
+
+<br/>
+
+## 제14주차(Categorical Data Analysis)
+
+-  [**A섹션: Binary Logistic Regression**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W14A.pdf)
+
+-  [**B섹션: Multinomial and Ordered Logistic Regression**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W14B.pdf)
+
+-  [코드 #14](https://github.com/hxk271/QASS/blob/main/W14.do)
