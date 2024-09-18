@@ -31,3 +31,15 @@
 -  [**B섹션: Hypothesis Tests**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W02B.pdf)
    
 -  [코드 #2](https://github.com/hxk271/QASS/blob/main/W02.do)
+
+
+<br/>
+
+## 제3주차(Examining Data)
+
+-  [**A섹션: Data Archives**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W03A.pdf)
+
+-  [**B섹션: Examining Datasets**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W03B.pdf)
+
+-  [코드 #3](https://github.com/hxk271/QASS/blob/main/W03.do)
+  
