@@ -43,3 +43,14 @@
 
 -  [코드 #3](https://github.com/hxk271/QASS/blob/main/W03.do)
   
+
+<br/>
+
+## 제4주차(Cross-Tabulations and Tables)
+
+-  [**A섹션: Cross-tabulation**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W04A.pdf)
+
+-  [**B섹션: Chi-square Analysis**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W04B.pdf)
+
+-  [코드 #4](https://github.com/hxk271/QASS/blob/main/W04.do)
+
