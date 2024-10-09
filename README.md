@@ -54,3 +54,13 @@
 
 -  [코드 #4](https://github.com/hxk271/QASS/blob/main/W04.do)
 
+
+<br/>
+
+## 제5주차(Means/Proportions Comparison)
+
+-  [**A섹션: Comparing Means/Proportions**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05A.pdf)
+
+-  [**B섹션: Mean Comparisons in Practice**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05B.pdf)
+
+-  [코드 #5](https://github.com/hxk271/QASS/blob/main/W05.do)
