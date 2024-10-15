@@ -64,3 +64,14 @@
 -  [**B섹션: Mean Comparisons in Practice**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W05B.pdf)
 
 -  [코드 #5](https://github.com/hxk271/QASS/blob/main/W05.do)
+
+
+<br/>
+
+## 제6주차(One-Way ANOVA)
+
+-  [**A섹션: Comparing Variances**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W06A.pdf)
+
+-  [**B섹션: One-Way ANOVA in Practice**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W06B.pdf)
+
+-  [코드 #6](https://github.com/hxk271/QASS/blob/main/W06.do)
