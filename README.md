@@ -75,3 +75,21 @@
 -  [**B섹션: One-Way ANOVA in Practice**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W06B.pdf)
 
 -  [코드 #6](https://github.com/hxk271/QASS/blob/main/W06.do)
+
+
+<br/>
+
+## 제7주차(Correlations and OLS Regression)
+
+-  [**A섹션: Correlation Analysis**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W07A.pdf)
+  
+-  [**B섹션: Bivariate Ordinary Least Squares**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W07B.pdf)
+  
+-  [코드 #7](https://github.com/hxk271/QASS/blob/main/W07.do)
+
+  
+<br/>
+
+## 제8주차(Midterm)
+
+
