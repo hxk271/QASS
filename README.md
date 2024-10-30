@@ -93,3 +93,12 @@
 ## 제8주차(Midterm)
 
 
+<br/>
+
+## 제9주차(Multiple Regression)
+
+-  [**A섹션: Introduction to Multiple Regression**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W09A.pdf)
+  
+-  [**B섹션: Multiple Regression in Practice**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W09B.pdf)
+  
+-  [코드 #9](https://github.com/hxk271/QASS/blob/main/W09.do)
