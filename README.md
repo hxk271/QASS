@@ -102,3 +102,15 @@
 -  [**B섹션: Multiple Regression in Practice**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W09B.pdf)
   
 -  [코드 #9](https://github.com/hxk271/QASS/blob/main/W09.do)
+
+
+
+<br/>
+
+## 제10주차(Dummy Variables and Conditional Relationships)
+
+-  [**A섹션: Dummy Variables**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W10A.pdf)
+
+-  [**B섹션: Moderating Variables and Interaction Terms**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W10B.pdf)
+  
+-  [코드 #10](https://github.com/hxk271/QASS/blob/main/W10.do)
