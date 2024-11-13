@@ -114,3 +114,14 @@
 -  [**B섹션: Moderating Variables and Interaction Terms**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W10B.pdf)
   
 -  [코드 #10](https://github.com/hxk271/QASS/blob/main/W10.do)
+
+
+<br/>
+
+## 제11주차(Regression Diagnostics)
+
+-  [**A섹션: Classical Regression Assumptions**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W11A.pdf)
+
+-  [**B섹션: Assumptions about the Error Term**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W11B.pdf)
+
+-  [코드 #11](https://github.com/hxk271/QASS/blob/main/W11.do)
