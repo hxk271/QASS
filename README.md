@@ -136,3 +136,15 @@
 -  [**B섹션: Variable Transformation**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W12B.pdf)
 
 -  [코드 #12](https://github.com/hxk271/QASS/blob/main/W12.do)
+
+
+<br/>
+
+## 제13주차(Principal Component Analysis and Scale Construction)
+
+-  [**A섹션: Construct Validity and Principal Component Analysis**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W13A.pdf)
+
+-  [**B섹션: Internal Reliability and Cronbach's Alpha**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W13B.pdf)
+
+-  [코드 #13](https://github.com/hxk271/QASS/blob/main/W13.do)
+
