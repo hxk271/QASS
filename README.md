@@ -148,3 +148,14 @@
 
 -  [코드 #13](https://github.com/hxk271/QASS/blob/main/W13.do)
 
+
+<br/>
+
+## 제14주차(Path Analysis)
+
+-  [**A섹션: Causal Diagram**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W14A.pdf)
+
+-  [**A섹션: Path Analysis and Mediation Effect**](https://github.com/hxk271/QASS/blob/main/Beamer_계량분석_W14B.pdf)
+
+-  [코드 #14](https://github.com/hxk271/QASS/blob/main/W14.do)
+
