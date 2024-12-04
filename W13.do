@@ -1,121 +1,135 @@
 *hyun woo kim, chungbuk national university, 2024
 
 
-*single princpal component
+*mediation effect
 
-	*Scores by Roger de Piles for Renaissance painters
-	webuse "renpainters", clear
-
-	graph twoway (scatter composition expression) ///
-	             (lfit composition expression)
+	*data prep
+	import delimited using "data/STARTUPS.csv", clear
+	gen id=_n
+	order id
+	label var id "대학 아이디"
+	label var startups "창업기업 수"
+	label var research "대학 연구비 (100만 달러)"
+	label var patents "특허 출원 수"
+	label var duration "기술이전부서 연령(년)"
+	compress
 	
-	*factoring
-	factor composition expression, pcf
-	eret list
-	mat list e(L)      //factor loadings
-	di e(L)[1,1]^2 + e(L)[2,1]^2         //replication of eigenvalue
-
-	*regression-based scoring
-	predict pc
-	mat list e(Ev)                      //eigenvalues
-	di e(L)[1,1] / e(Ev)[1,1]
-	di e(L)[2,1] / e(Ev)[1,1]
+	*first regression
+	reg startups duration research, beta
 	
-	*factor loadings are correlation coefficients
-	pwcorr pc composition expression
-
-	
-	
-	
-	
-*two princpal components
-
-	factor composition drawing colour expression, pcf
-	
-	*extracting the principal components
-	screeplot, yline(1)
-		
-	*eigenvalues
-	di e(L)[1,1]^2 + e(L)[2,1]^2 + e(L)[3,1]^2 + e(L)[4,1]^2
-	
-	*proportions
-	di e(Ev)[1,1] / (e(Ev)[1,1] + e(Ev)[1,2] + e(Ev)[1,3] + e(Ev)[1,4])
-	
-	*communality and uniqueness
-	scalar communal = e(L)[1,1]^2 + e(L)[1,2]^2
-	di communal
-	di 1 - communal
-	
-	*regression-based scoring
-	predict pc1 pc2
-	di e(L)[1,1]/e(Ev)[1,1]
-	
-	*factor loadings are correlation coefficients
-	pwcorr pc1 composition drawing colour expression
-	
-	graph twoway (scatter pc2 pc1, mlabel(painter))
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-*rotation
-
-	*orthogonal rotation
-	factor composition drawing colour expression, pcf
-	rotate
-	rotate, blank(.4)
-	predict pc1o pc2o
-	pwcorr pc1o pc2o
-	
-	*oblique rotation
-	factor composition drawing colour expression, pcf
-	rotate, promax(3) blank(.4)
-	predict pc1p pc2p
-	pwcorr pc1p pc2p
-	
-	
-	
-	
-	
-		   
-*reliability
-		   
-	*cronbach's alpha
-	alpha composition drawing colour expression
-	
-	*check if there are items to be deleted
-	alpha composition drawing colour expression, item
-
-	*normalization
-	foreach i of varlist composition drawing colour expression {
-		qui su `i'
-		gen `i'_std=(`i'-r(mean))/r(sd)
+	*normalization of variables
+	foreach i of varlist startups duration research {
+		su `i'
+		replace `i'=(`i'-r(mean))/r(sd)
 		}
-	alpha *_std, item
-
-	*alpha with normalized items
-	alpha composition drawing colour expression, std
-
-
+	
+	*now betas are identical to raw coefficients
+	reg startups duration research, beta
+	
+	*total effect of duration
+	reg startups duration, beta
+	scalar teff = _b[duration]
+	di teff
+	
+	*direct effect of duration
+	eststo: reg startups duration research, beta
+	scalar deff = _b[duration]
+	di deff
+	
+	*indirect effect of duration #2
+	scalar ieff2 = _b[research]
+	di ieff2
+	
+	*indirect effect of duration #1
+	eststo: reg research duration, beta
+	scalar ieff1 = _b[duration]
+	di ieff1
+	
+	*total effect of duration
+	di deff + (ieff1 * ieff2)
+	di teff
+	
 
 
 	
+	
+	
+	
+*multiple mediators: not_smsa -> collgrad, union -> ln_wage
+	
+	*data prep
+	webuse nlswork, clear
+	keep if !missing(not_smsa, collgrad, union, ln_wage, south)
+	est clear
+	
+	*normalization of variables
+	foreach i of varlist not_smsa collgrad union ln_wage south {
+		su `i'
+		replace `i'=(`i'-r(mean))/r(sd)
+		}
+	
+	*total effect
+	eststo: reg ln_wage not_smsa south
+	scalar teff=_b[not_smsa]
+	
+	*direct effect and two indirect effects
+	eststo: reg ln_wage not_smsa collgrad union south
+	scalar deff=_b[not_smsa]
+	scalar ieff2_collgrad=_b[collgrad]      //via collgrad
+	scalar ieff2_union=_b[union]            //via union  
+	
+	*the rest of two indirect effects
+	eststo: reg collgrad not_smsa south
+	scalar ieff1_collgrad=_b[not_smsa]      //via collgrad
+	eststo: reg union not_smsa south
+	scalar ieff1_union=_b[not_smsa]        //via union
+	
+	*total effect decomposition
+	esttab, nogap                         //model 1 and 2 will suffice
+	di (ieff1_collgrad*ieff2_collgrad) + (ieff1_union*ieff2_union) + deff
+	di teff
+	
+	*percentages
+	di deff/teff
+	di (ieff1_collgrad*ieff2_collgrad)/teff
+	di (ieff1_union*ieff2_union)/teff
+	
+	
+	
 
+
+
+*omitted variable bias
+
+	*data prep
+	webuse nlswork, clear
+	drop if missing(age, race, nev_mar, c_city, collgrad, ln_wage, union, south)	
+
+	*normalization of variables
+	foreach i of varlist ln_wage union south {
+		su `i'
+		replace `i'=(`i'-r(mean))/r(sd)
+		}
 		
-*Bartlett test of sphericity and KMO
-	
-	pwcorr
+	*model specification: south (X) -> union (M) -> ln_wage (Y)
+	global control "age c.age#c.age i.race nev_mar c_city collgrad"
+	est clear
 
-	*make sure "ssc install factortest"
-	factortest composition drawing colour expression
-	
-	estat kmo
+	*full model (with union)
+	eststo: reg ln_wage union south $control	
+	scalar b_f=_b[south]
+
+	*reduced model (without union)
+	eststo: reg ln_wage       south $control
+	scalar b_r=_b[south]
+
+	esttab, wide
+
+	*omitted variable bias
+	di b_r                 //total effect of south
+	di b_f                 //direct effect of south via union
+	di b_r - b_f           //indirect effect of south via union
+	di (b_r - b_f) / b_r   //percentage
+
 	
 	
