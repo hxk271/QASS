@@ -28,6 +28,6 @@
 
 -  [**A섹션: Descriptive Statistics**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W02A.pdf)
   
--  [**B섹션: Hypothesis Tests**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W02B.pdf)
+-  [**B섹션: Cross-tabulation**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W02B.pdf)
    
 -  [코드 #2](https://github.com/hxk271/QASS/blob/main/archive/W02.do)
