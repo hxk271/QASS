@@ -24,7 +24,7 @@
 
 <br/>
 
-## 제2주차(Descriptive Statistics and Hypothesis Tests)
+## 제2주차(Descriptive Statistics)
 
 -  [**A섹션: Descriptive Statistics**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W02A.pdf)
   
