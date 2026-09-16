@@ -31,3 +31,16 @@
 -  [**B섹션: Cross-tabulation**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W02B.pdf)
    
 -  [코드 #2](https://github.com/hxk271/QASS/blob/main/archive/W02.do)
+
+
+<br/>
+
+## 제3주차(Examining Data)
+
+-  [**A섹션: Data Reshape**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W03A.pdf)
+
+-  [**B섹션: Aggregation and Merge**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W03B.pdf)
+
+-  [코드 #3](https://github.com/hxk271/QASS/blob/main/archive/W03.do)
+  
+
