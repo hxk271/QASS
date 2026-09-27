@@ -44,3 +44,14 @@
 -  [코드 #3](https://github.com/hxk271/QASS/blob/main/archive/W03.do)
   
 
+<br/>
+
+## 제4주차(Means/Proportions Comparison)
+
+-  [**A섹션: Comparing Means/Proportions**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W04A.pdf)
+
+-  [**B섹션: Comparing Variances**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W04B.pdf)
+
+-  [코드 #4](https://github.com/hxk271/QASS/blob/main/archive/W04.do)
+
+
