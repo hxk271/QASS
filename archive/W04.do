@@ -20,13 +20,9 @@
 	*collect statistics
 	su ln_wage
 	return list              //list of available scalars or matrices
-	scalar mu=r(mean)        //sample mean
-	scalar n=r(N)            //sample size
-	scalar sd=r(sd)          //sample standard deviation
-	display sd
 	
 	*canned command
-	ztest ln_wage==1.67, sd(`sd')
+	ztest ln_wage==1.67, sd(`r(sd)')
 
 	
 	
@@ -37,24 +33,28 @@
 	*collect statistics
 	su ln_wage
 	return list              //list of available scalars or matrices
+	scalar xbar=r(mean)      //sample mean
+	scalar n=r(N)            //sample size
+	scalar sd=r(sd)          //sample standard deviation
+	display xbar, n, sd
 	
 	*t statistic
 	scalar se=sd/sqrt(n)
-	scalar tval=(mu-1.67)/se  //H0: mu_0=1.67
+	scalar tval=(xbar-1.67)/se  //H0: mu_0=1.67
 	di tval
-
-	*95% confidence interval (x = mu +- 1.96 * se)
-	help invt                                   //t.inv in excel
-	scalar lcv = mu + invt(n-1, .025) * se      //left critical value
-	scalar rcv = mu + invt(n-1, .975) * se      //right critical value 
-	di lcv, rcv
 
 	*p-value
 	help t
-	display t(n, tval)        //H0: mu>=1.67, Ha: mu<1.67
-	display (1-t(n, tval))*2  //H0: mu==1.67, Ha: mu!=1.67
-	display 1-t(n, tval)      //H0: mu<=1.67, Ha: mu>1.67
-		
+	display t(n-1, tval)        //H0: mu>=1.67, Ha: mu<1.67
+	display (1-t(n-1, tval))*2  //H0: mu==1.67, Ha: mu!=1.67
+	display 1-t(n-1, tval)      //H0: mu<=1.67, Ha: mu>1.67
+
+	*95% confidence interval (x = xbar +- 1.96 * se)
+	help invt                                   //t.inv in excel
+	scalar lcv = xbar + invt(n-1, .025) * se      //left critical value
+	scalar rcv = xbar + invt(n-1, .975) * se      //right critical value 
+	di lcv, rcv
+	
 	*canned command
 	ttest ln_wage=1.67
 	mean ln_wage, level(99)      //for empirical mean and confidence intervals
