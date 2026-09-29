@@ -44,13 +44,13 @@
 	di tval
 
 	*p-value
-	help t
+	help t                      //t.dist in excel
 	display t(n-1, tval)        //H0: mu>=1.67, Ha: mu<1.67
 	display (1-t(n-1, tval))*2  //H0: mu==1.67, Ha: mu!=1.67
 	display 1-t(n-1, tval)      //H0: mu<=1.67, Ha: mu>1.67
 
 	*95% confidence interval (x = xbar +- 1.96 * se)
-	help invt                                   //t.inv in excel
+	help invt                                     //t.inv in excel
 	scalar lcv = xbar + invt(n-1, .025) * se      //left critical value
 	scalar rcv = xbar + invt(n-1, .975) * se      //right critical value 
 	di lcv, rcv
