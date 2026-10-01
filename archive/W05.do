@@ -18,9 +18,9 @@
 	/* 95% confidence interval is meaningless here */
 	
 	*p-value (note that chi-sq is asymmetric)
-	display chi2(n-1, chisq)    //H0: sd>=9.5, Ha: sd<9.5
-	display chi2(n-1, chisq)*2  //H0: sd==9.5, Ha: sd!=9.5 (for convenience)
-	display 1-chi2(n-1, chisq)  //H0: sd<=9.5, Ha: sd>9.5
+	display chi2(n-1, chisq)    //H0: sd>=10, Ha: sd<10
+	display chi2(n-1, chisq)*2  //H0: sd==10, Ha: sd!=10 (for convenience)
+	display 1-chi2(n-1, chisq)  //H0: sd<=10, Ha: sd>10
 
 	*replication
 	sdtest lengthstay==10
