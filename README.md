@@ -55,3 +55,13 @@
 -  [코드 #4](https://github.com/hxk271/QASS/blob/main/archive/W04.do)
 
 
+<br/>
+
+## 제5주차(ANOVA)
+
+-  [**A섹션: Comparing Variances**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W05A.pdf)
+
+-  [**B섹션: One-Way ANOVA in Practice**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W05B.pdf)
+
+-  [코드 #5](https://github.com/hxk271/QASS/blob/main/archive/W05.do)
+
