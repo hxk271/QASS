@@ -65,3 +65,13 @@
 
 -  [코드 #5](https://github.com/hxk271/QASS/blob/main/archive/W05.do)
 
+
+<br/>
+
+## 제6주차(Correlations and OLS Regression)
+
+-  [**A섹션: Correlation Analysis**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W06A.pdf)
+  
+-  [**B섹션: Bivariate Ordinary Least Squares**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W06B.pdf)
+  
+-  [코드 #6](https://github.com/hxk271/QASS/blob/main/archive/W06.do)
