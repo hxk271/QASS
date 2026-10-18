@@ -75,3 +75,20 @@
 -  [**B섹션: Bivariate Ordinary Least Squares**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W06B.pdf)
   
 -  [코드 #6](https://github.com/hxk271/QASS/blob/main/archive/W06.do)
+
+
+<br/>
+
+## 제7주차(Multiple Regression)
+
+-  [**A섹션: Introduction to Multiple Regression**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W07A.pdf)
+  
+-  [**B섹션: Multiple Regression in Practice**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W07B.pdf)
+  
+-  [코드 #7](https://github.com/hxk271/QASS/blob/main/archive/W07.do)
+
+
+<br/>
+
+## 제8주차(Midterm)
+
