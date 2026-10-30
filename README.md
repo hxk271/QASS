@@ -92,3 +92,14 @@
 
 ## 제8주차(Midterm)
 
+
+<br/>
+
+## 제9주차(Dummy Variables and Conditional Relationships)
+
+-  [**A섹션: Dummy Variables**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W09A.pdf)
+
+-  [**B섹션: Moderating Variables and Interaction Effects**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W09B.pdf)
+  
+-  [코드 #9](https://github.com/hxk271/QASS/blob/main/archive/W09.do)
+
