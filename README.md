@@ -103,3 +103,14 @@
   
 -  [코드 #9](https://github.com/hxk271/QASS/blob/main/archive/W09.do)
 
+
+<br/>
+
+## 제10주차(Regression Diagnostics)
+
+-  [**A섹션: Classical Regression Assumptions**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W10A.pdf)
+
+-  [**B섹션: Assumptions about Error Term**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W10B.pdf)
+
+-  [코드 #10](https://github.com/hxk271/QASS/blob/main/archive/W10.do)
+
