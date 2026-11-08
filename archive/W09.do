@@ -1,4 +1,4 @@
-*hyun woo kim, chungbuk national university, 2024
+*hyun woo kim, chungbuk national university, 2026
 
 
 *dummy variable
@@ -115,33 +115,6 @@
 	test 12.grade=13.grade
 
 
-	
-	
-	
-*exception handling
-
-	*
-	ta occ_code race, nofreq row chi
-	gen major=occ_code==7 & race==2
-
-	*
-	est clear
-	eststo: reg ln_wage i.union i.race grade ttl_exp i.occ_code
-	eststo: reg ln_wage i.union i.race grade ttl_exp i.occ_code i.major
-	esttab, r2 label wide
-
-	*if dummy indicator is unique to an observation
-	gen unique=(idcode==1 & year==72)
-	ta unique
-	
-	est clear
-	eststo: reg ln_wage grade ttl_exp unique
-	drop if unique==1
-	eststo: reg ln_wage grade ttl_exp
-	esttab, r2 label wide
-
-	
-	
 	
 	
 	
