@@ -114,3 +114,16 @@
 
 -  [코드 #10](https://github.com/hxk271/QASS/blob/main/archive/W10.do)
 
+
+<br/>
+
+## 제11주차(Nonlinear Modelling and Variable Transformations)
+
+-  [**A섹션: Quadratic Function and Fractional Polynomials**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W11A.pdf)
+
+-  [**B섹션: Variable Transformation**](https://github.com/hxk271/QASS/blob/main/archive/Beamer_계량분석_W11B.pdf)
+
+-  [코드 #11](https://github.com/hxk271/QASS/blob/main/archive/W11.do)
+
+
+
