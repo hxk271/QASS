@@ -2,157 +2,248 @@
 
 
 
-*linearity
-
-	*transit data
-	import delimited "data/transit.csv", clear
-	graph twoway (scatter rider map) ///
-	             (lfit    rider map) ///
-				 (qfit    rider map)
-
-	*scatterplot residues against y hat
-	reg rider map
-	predict res, residual
-	predict yhat, xb
-	graph twoway (scatter res yhat) ///
-	             (lfit    res yhat) ///
-				 (qfit    res yhat)
-	rvfplot         //residual-vs-fitted plot
-
-	*matrix scatterplot
-	use "data/ATTEND.DTA", clear
-	graph matrix termgpa priGPA ACT final atndrte hwrte, half
-	reg termgpa priGPA ACT final atndrte hwrte
-	rvfplot
+*Life expectancy, 1998
 	
-	
-	
-	
-*full rank
+	webuse "lifeexp", clear
 
-	*perfect collinearity
-	gen x3=x2				    //x3 is identical to x2
-	reg y x1 x2 x3
-	gen x4=0.5+(1.5*x2)         //x4 is a linear combination of x2
-	reg y x1 x2 x4
 
-	*eyeballing for multicollinearity
-	webuse "bodyfat", clear
-	corr triceps thigh midarm bodyfat
+*use of squared terms
+
+	*variable inspection
+	de lexp gnppc
+	inspect lexp gnppc
+	drop if missing(lexp, gnppc)
+	
+	*fit a linear model to data
+	reg lexp gnppc
+	
+	*draw a straight fitting line
+	graph twoway (scatter lexp gnppc) ///
+				 (lfit    lexp gnppc), legend(off)
+	
+	*draw a quadratic fitting line
+	graph twoway (scatter lexp gnppc) ///
+				 (qfit lexp gnppc), legend(off)
+				 
+	*generate the squared term of gnp per capita
+	gen gnppc2=gnppc^2
+
+	*regression model with a squared term
+	reg lexp gnppc gnppc2
+	reg lexp gnppc c.gnppc#c.gnppc
+	reg lexp c.gnppc##c.gnppc
+	
+	*hierarchical regression models
 	est clear
-	eststo: reg bodyfat tricep
-	eststo: reg bodyfat        thigh
-	eststo: reg bodyfat              midarm
-	eststo: reg bodyfat tricep thigh
-	eststo: reg bodyfat        thigh midarm
-	eststo: reg bodyfat tricep       midarm
-	eststo: reg bodyfat tricep thigh midarm
-	esttab, r2
+	eststo: reg lexp gnppc
+	eststo: reg lexp c.gnppc##c.gnppc
+	esttab, nogap stats(N r2 r2_a F)
+	
+	
+	
+	
+*visualization
 
-	*variance inflation factors
-	reg bodyfat tricep thigh midarm
-	vif
-	reg tricep thigh midarm
-	ereturn list
-	scalar tolerance=1-e(r2)     //tricep's tolerance
-	di 1/tolerance               //tricep's vif
+	*first fit the model with a squared term
+	reg lexp c.gnppc##c.gnppc
 
+	*predicted y
+	su gnppc
+	ret list
+	margins, at(gnppc=(`r(min)'(100)`r(max)'))
+	marginsplot, recast(line) recastci(rarea) ///
+				 ytitle("Predicted life expectancy at birth")
+
+	*addplot option
+	marginsplot, recast(line) recastci(rarea) legend(off) ///
+				 addplot(scatter lexp gnppc, msymbol(Oh) mcolor(black%50)) ///
+				 ytitle("Predicted life expectancy at birth")
+
+	
+	
+
+
+*use of squared terms, again
+
+	*strong collinearity and mean-centering
+	pwcorr gnppc gnppc2
+	su gnppc
+	gen gnppc_mc=gnppc-`r(mean)'
+	gen gnppc_mc2=gnppc_mc^2
+	pwcorr gnppc_mc gnppc_mc2
+	
+	*hierarchical regression models
+	est clear	
+	eststo: reg lexp gnppc gnppc2
+	vif //quite high
+	eststo: reg lexp gnppc_mc gnppc_mc2
+	vif //quite low
+	esttab, nogap stats(N r2 r2_a F)
 
 	
 	
 	
-*outlier detection
 	
-	*regress systolic blood pressure on covariates
-	webuse "nhanes2", clear
+	
+*polynomial function
+				 
+	*plot a fractional polynomial function
+	graph twoway (scatter lexp gnppc) ///
+				 (fpfit lexp gnppc, estopts(degree(3))), legend(off)
+			 
+	*regression
+	reg lexp c.gnppc##c.gnppc##c.gnppc
+	
+	*predicted y
+	su gnppc
+	margins, at(gnppc=(`r(min)'(100)`r(max)'))
+	marginsplot, recast(line) recastci(rarea) legend(off) ///
+				 addplot(scatter lexp gnppc, msymbol(Oh) mcolor(black%50)) ///
+				 ytitle("Predicted life expectancy at birth")
 
-	*(1) studentized residuals
+	*hierarchical regression models
+	est clear	
+	eststo: reg lexp c.gnppc
+	eststo: reg lexp c.gnppc##c.gnppc
+	eststo: reg lexp c.gnppc##c.gnppc##c.gnppc
+	esttab, nogap stats(N r2 r2_a F)
+
+	*nested regression
+	nestreg: reg lexp c.gnppc##c.gnppc##c.gnppc
+	
+	*ramsey's reset
+	eststo: reg lexp c.gnppc
+	ovtest
+	eststo: reg lexp c.gnppc##c.gnppc
+	ovtest
+	eststo: reg lexp c.gnppc##c.gnppc##c.gnppc
+	ovtest
+
+
+
+
+
+
+*use of step functions
+
+	*house price data, 1978-1981
+	use "data/KIELMC.DTA", clear
+
+	*scatterplot
+	graph twoway (scatter price age) ///
+	             (lfit price age)    ///
+	             (qfit price age), legend(off)
+	graph twoway (scatter price age) ///
+				 (fpfit   price age, estopts(degree(3)))
+
+	*regression with three power terms
 	est clear
-	eststo: reg bpsystol age sex i.race bmi
-	predict rstudent, rstudent
-	histogram rstudent
-	eststo: reg bpsystol age sex i.race bmi if abs(rstudent)<5
+	eststo: reg price cbd i.year age
+	eststo: reg price cbd i.year c.age##c.age
+	eststo: reg price cbd i.year c.age##c.age##c.age
+	esttab, nogap stats(N r2 r2_a F)
 	
-	*(2) cook's distance
-	quietly reg bpsystol age sex i.race bmi        //quietly!
-	predict cook, cooksd
-	histogram cook
-	su
-	return list
-	eststo: reg bpsystol age sex i.race bmi if cook<4/`r(N)'
+	*marginsplot
+	su age
+	margins, at(age=(`r(min)'(10)`r(max)'))
+	marginsplot, addplot(scatter price age, msymbol(Oh) mcolor(black%50)) legend(off)
 
-	*model comparison
-	esttab, r2
-	
-	
-	
-	
-	
-*zero conditional mean
-
-	*transit data
-	import delimited "data/transit.csv", clear
-	reg rider map
-	predict res, residual
-	graph twoway (scatter res map) ///
-	             (lfit    res map)
-
-	*simulated data
-	clear
-	set obs 100
-	set seed 1234
-	help runform
-	gen x1=runiform()*10
-	help rnormal
-	gen u=rnormal(0, 10)
-	gen y=1.5*x1 - 2.5*(x1^2) + u
-	
-	*misspecified model
-	reg y x1
-	predict res1, res
-	graph twoway (scatter res1 x1) ///
-	             (lfit    res1 x1)
-	
-	*correctly specified model
-	reg y c.x1##c.x1
-	predict res2, res
-	graph twoway (scatter res2 x1) ///
-	             (lfit    res2 x1)
-	
+	*age as step function
+	su age
+	xtile age_step=age, nquantiles(10)      //quantile variable
+	ta age age_step
+	reg price cbd i.year i.age_step
+	margins, by(age_step)
+	marginsplot
 	
 
-	
-*homoscedasticity
 
-	*simulated data
-	clear
-	set obs 1000
-	set seed 1234
-	gen x1=runiform()*10
-	gen x2=runiform()*5*x1
-	gen u=rnormal(0,10)
-	gen y=1.5*x1 + 2.5*x2 + u
-
-	*heteroscedasticity
-	reg y x1        //mis-specified model
-	predict res1, res
-	graph twoway (scatter res1 x1) (lfit res1 x1)
-	estat hettest   //breusch-pagan test
-	
-	*homoscedasticity
-	reg y x1 x2
-	predict res2, res
-	graph twoway (scatter res2 x1) (lfit res2 x1)
-	graph twoway (scatter res2 x2) (lfit res2 x2)
-	estat hettest   //breusch-pagan test
 
 	
-	
-	
-*normality
+*interaction effects in combination of a squared term
 
-	*
-	webuse "nhanes2", clear
-	reg bpsystol age sex i.race bmi
-	predict res, res
-	pnorm res    //pp plot
+	*house price data, 1978-1981
+	use "data/KIELMC.DTA", clear
+
+	*interaction term only
+	reg price i.y81 c.cbd i.y81#c.cbd
+	su cbd
+	margins, at(cbd=(1000(1000)35000)) by(y81)
+	marginsplot
+
+	*squared term only
+	reg price c.cbd c.cbd#c.cbd
+	margins, at(cbd=(1000(1000)35000))
+	marginsplot
+
+	*combined
+	reg price i.y81 c.cbd##c.cbd c.cbd#i.y81
+	margins, at(cbd=(1000(1000)35000)) by(y81)
+	marginsplot, recast(line) recastci(rarea) ///
+	             ytitle("Predicted price")
+
+
+	*hierarchical regression analysis
+	est clear
+	eststo: reg price i.y81 c.cbd i.y81#c.cbd
+	eststo: reg price       c.cbd             c.cbd#c.cbd
+	eststo: reg price i.y81 c.cbd i.y81#c.cbd c.cbd#c.cbd
+	eststo: reg price i.y81 c.cbd i.y81#c.cbd c.cbd#c.cbd i.y81#c.cbd#c.cbd
+	esttab, nogap stats(N r2 r2_a F)
+	
+	
+
+
+*log transformation
+
+	*log transform the price
+	hist price
+	gen ln_price=ln(price)
+	hist ln_price
+	
+	*scatterplot
+	graph twoway (scatter ln_price age) (lfit ln_price age)
+	graph twoway (scatter ln_price age) (qfit ln_price age)
+
+	*regression with a squared term
+	est clear
+	eststo: reg ln_price i.y81 cbd age
+	eststo: reg ln_price i.y81 cbd c.age##c.age
+	esttab, nogap stats(N r2 r2_a F)
+	
+	*combined
+	reg ln_price i.y81 c.cbd##c.cbd c.cbd#i.y81
+	margins, at(cbd=(1000(1000)35000)) by(y81)
+	marginsplot, recast(line) recastci(rarea) ///
+	             ytitle("Predicted price")
+
+	*handling ln(0)
+	gen ln_age=ln(age+1)
+	reg ln_price i.y81 age
+	reg ln_price i.y81 ln_age
+
+	*zero-skewness log transformation
+	lnskew0 lnage=age
+	pwcorr ln_age lnage
+	
+
+	
+	
+	
+*interpretations
+
+	*log-log model
+	reg ln_price i.y81 cbd age larea
+
+	*log-linear model
+	reg ln_price i.y81 cbd age area
+	
+	*linear-log model
+	reg price i.y81 cbd age larea
+	
+	
+	
+	
+	
+	
+	
